@@ -1,0 +1,28 @@
+{
+  "iot": {
+    "Device": {
+      "IpAddress": "192.168.43.101",
+      "DeviceName": "Raspberry Pi 3",
+      "UserName": "Administrator",
+      "Password": "p@ssw0rd",
+      "ListFilter": null
+    },
+    "Deployment": {
+      "Files": [
+        "src/**",
+        "package.json",
+        "node_modules/**"
+      ],
+      "LaunchBrowserPageNo": "http://192.168.43.101:1337/"
+    },
+    "RunCommands": [
+      "iotstartup list",
+      "iotstartup add headless NodeScriptHost",
+      "iotstartup remove headless NodeScriptHost",
+      "deployappx getpackages|findstr -i nodescripthost",
+      "deployappx uninstall NodeScriptHost_1.0.1.0_x86__dnsz84vs3g3zp",
+      "deployappx uninstall NodeScriptHost_1.0.1.0_arm__dnsz84vs3g3zp",
+      "deployappx uninstall NodeScriptHost_1.0.1.0_x64__dnsz84vs3g3zp"
+    ]
+  }
+}
